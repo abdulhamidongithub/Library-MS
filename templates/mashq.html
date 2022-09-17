@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br>
+    <br>
+    <hr>
+    <h1>Mashq uchun yozdik!</h1>
+    <br>
+    <br>
+    <h2>salom, {{ism}}!</h2>
+    <hr>
+    <h1>{{ism}}ning do'stlari ro'yxati:</h1>
+    <br>
+    {% for name in names %}
+    {% if 'a' not in name %}
+    <h2>{{name}}</h2>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Studentlar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <hr>
+    <h1>Hamma talabalar ro'yxati:</h1>
+    <br>
+    <br>
+    <form method="get" action="/students/">
+        <input type="text" name="q_sozi">
+        <button type="submit">Qidirish</button>
+    </form>
+    <br>
+    <br>
+    {% for student in studentlar %}
+    <h2 style="display:inline;">{{student.id}}. <a href="/talaba/{{student.id}}/">{{student}} </a></h2>
+    <a href="/talaba_tas/{{student.id}}/"><button>O'chirish</button></a>
+    <a href="/talaba_edit/{{student.id}}/"><button>O'zgartirish</button></a><br><br><br>
+    {% endfor %}
+    <br>
+    <br>
+    <form method="post" action="/students/">{% csrf_token %}
+        <input type="text" name="name" placeholder="Ism">
+        <select name="gender">
+            <option value="Erkak">Erkak</option>
+            <option value="Ayol">Ayol</option>
+        </select>
+        <input type="number" name="books" placeholder="Kitob soni">
+        <label>Bitiruvchi</label>
+        <input type="checkbox" name="bt">
+        <button type="submit">Qo'shish</button>
+    </form>
+    <br>
+    <br>
+</body>
+</html>

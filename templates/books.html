@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <br>
+    <br>
+    <hr>
+    <h1>Hamma kitoblar ro'yxati:</h1>
+    <br>
+    <br>
+    <br>
+    {% for kitob in kitoblar %}
+    <h2 style="display:inline;">{{kitob.id}}. {{kitob.nom}}</h2>
+        <br>
+        <br>
+    {% endfor %}
+    <br>
+    <br>
+        <form method="post" action="/books/">{% csrf_token %}
+            <input type="text" name="nomi" placeholder="Nom">
+            <input type="number" name="sahifasi" placeholder="Sahifa">
+            <input type="text" name="janri" placeholder="Janr">
+            <select name="muallifi">
+                {% for muallif in mualliflar %}
+                <option value="{{muallif.id}}">{{muallif.ism}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Qo'shish</button>
+        </form>
+        <br>
+    <br>
+</body>
+</html>
