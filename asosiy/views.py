@@ -2,8 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
 
-def sinashga(request):
-    return HttpResponse("Hello World!")
 
 def bosh_sahifa(request):
     return render(request, 'asosiy.html')

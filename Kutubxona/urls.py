@@ -4,7 +4,6 @@ from asosiy.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sinashga/', sinashga),
     path('', bosh_sahifa),
     path('mashq/', mashq),
     path('students/', hamma_talabalar),
